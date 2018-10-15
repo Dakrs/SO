@@ -1,0 +1,25 @@
+ex1.nb
+$ ls -l
+>>>
+total 1440
+-rwxr-xr-x  1 Ambrosiny  staff     407  2 Jun 21:36 Makefile
+drwxr-xr-x  2 Ambrosiny  staff      64  5 Jun 08:19 a
+-rw-r--r--@ 1 Ambrosiny  staff      28  5 Jun 11:07 aux1.nb
+-rw-r--r--  1 Ambrosiny  staff      21  5 Jun 11:29 ex1.nb
+-rw-r--r--  1 Ambrosiny  staff     476  5 Jun 11:29 ex2.nb
+-rwxr-xr-x  1 Ambrosiny  staff     258  2 Jun 23:40 exemplo.txt
+-rwxr-xr-x  1 Ambrosiny  staff    4383  2 Jun 23:35 main.c
+-rwxr-xr-x  1 Ambrosiny  staff   22164  2 Jun 23:35 notebook
+drwxr-xr-x  6 Ambrosiny  staff     192  2 Jun 23:35 obj
+-rwxr-xr-x  1 Ambrosiny  staff    7496  2 Jun 21:36 parser.c
+-rw-r--r--  1 Ambrosiny  staff    7652  2 Jun 22:54 process.c
+-rwxr-xr-x  1 Ambrosiny  staff   23524  2 Jun 20:53 program
+-rwxr-xr-x  1 Ambrosiny  staff     786  5 Jun 10:49 script.sh
+-rwxr-xr-x  1 Ambrosiny  staff    8736 30 Mai 09:31 teste
+-rw-r--r--@ 1 Ambrosiny  staff  620928  5 Jun 11:06 teste.nb
+-rw-r--r--@ 1 Ambrosiny  staff    1581  2 Jun 19:51 text.txt
+<<<
+$| wc
+>>>
+      17     147     970
+<<<

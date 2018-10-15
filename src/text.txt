@@ -1,0 +1,24 @@
+1. Processamento de uma linha de comando no caso do primeiro comando não ser $n|
+Durante a execução da linha é criado um fork por cada comando na linha de comandos.
+(Explica o que é a linha) ls | sort | head -1
+O pai cria um filho e faz o redirecionamento dos escritores para a informação ser
+passada entre filhos. O pai espera e ve toda a informação escrita pelo filho no pipe
+sendo que esta informação fica depois guardada num Apontador de strings para no fim
+ser usada para ter acesso aos outputs entre comandos. Depois de lida a informação
+o pai cria um novo pipe onde escreve os valores lidos pelo filho anterior para
+que possam ser usados pelo filho seguinte. Quando a execução de todos os filhos
+acaba os vários outputs entre comandos são escritos num pipe que é passado ao
+pai pelo avó.
+
+A função do avó é criar um processo que vai executar uma linha de comandos.
+O avo passa ao filho um escritor para um pipe onde o filho vai escrever o resultado
+da execução os seus comandos. O avó espera que este acabe e depois lê a informação
+escrita no pipe para memória.
+
+No fim é escrito no ficheiro final o output de todos os comandos sequencialmente.
+
+Para a execução dos comandos $n| é calculada a dependência e como o programa
+é sequencial quando chega à altura da execução do mesmo a dependência já não
+existe e este acede ao output do comando do qual inicialmente era dependente.
+Esta informação é escrita num pipe para que o primeiro comando a ser executado
+a possa ler. A partir deste ponto é a execução é igual à anterior.

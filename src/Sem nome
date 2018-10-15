@@ -1,0 +1,63 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int * pipes;
+int * pids;
+int size;
+int time_var = 0;
+int pipe;
+
+void alarm_control(int i){
+	time_var += 3;
+	write(1,"OK",2);
+	write(pipe,"OK",2);
+	alarm(3);
+}
+
+void alarm_2
+
+
+int executa(char * arg,int fd){
+	pipe = fd;
+	signal(SIGALRM,alarm_control);
+
+	if(!fork()){
+		execlp(arg,arg,NULL);
+		perror("Erro no exec");
+		_exit(-1);
+	}
+	alarm(3);
+	wait(NULL);
+	close(fd);
+
+	printf("%d\n", time_var);
+}
+
+
+int main(int args, char * argv[]){
+
+	signal(SIGALRM,alarm_pai);
+
+	pipes = malloc((args-1)*sizeof(int));
+	pids = malloc((args-1)*sizeof(int));
+	size = (args-1);
+	int p[2];
+
+	for(int k = 1; k < args; k++){
+
+		pipe(p);
+		if(!fork()){
+			close(p[0]);
+			executa(argv[k],p[1]);
+			_exit(0);
+		}
+		else{
+			close(p[1]);
+			pipes[k-1] = p[0];
+		}
+	}
+
+	for(k = 0; k < args -1; k++)
+		wait(NULL);
+	_exit(0);
+}

@@ -1,0 +1,2 @@
+isto vai listar
+$   cat ex.txt

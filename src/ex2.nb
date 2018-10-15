@@ -1,0 +1,19 @@
+lista ps
+$   ps
+>>>
+  PID TTY           TIME CMD
+15946 ttys000    0:00.05 /Applications/iTerm.app/Contents/MacOS/iTerm2 --server login -fp Ambrosiny
+15948 ttys000    0:00.51 -zsh
+16585 ttys000    0:00.00 ./notebook ex2.nb ex1.nb
+16586 ttys000    0:00.00 ./notebook ex2.nb ex1.nb
+16587 ttys000    0:00.00 ./notebook ex2.nb ex1.nb
+16588 ttys000    0:00.00 ./notebook ex2.nb ex1.nb
+16589 ttys000    0:00.00 ./notebook ex2.nb ex1.nb
+16591 ttys000    0:00.00 (ls)
+<<<
+a segunda cena
+$|  head -2
+>>>
+  PID TTY           TIME CMD
+15946 ttys000    0:00.05 /Applications/iTerm.app/Contents/MacOS/iTerm2 --server login -fp Ambrosiny
+<<<
